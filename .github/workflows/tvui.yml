@@ -16,21 +16,20 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Use Node.js
-        uses: actions/setup-node@v2
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
         with:
-          node-version: '16'
+          bun-version: 'latest'
 
       - name: Install dependencies
-        run: npm ci
+        run: bun install
 
       - name: Build Nuxt app
-        run: npm run build
+        run: bun run build
 
       - name: Run tests (optional)
-        run: npm run test
+        run: bun run test
 
-      # Example deploy step to Vercel (replace with your deploy commands)
       - name: Deploy to Vercel
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
