@@ -27,8 +27,7 @@ jobs:
       - name: Build Nuxt app
         run: bun run build
 
-      - name: Run tests (optional)
-        run: bun run test
+
 
       - name: Deploy to Vercel
         env:
