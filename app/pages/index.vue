@@ -6,17 +6,9 @@
 </template>
 
 <script setup >
-import { useCommonStore } from '~/store';
 
 
-const commonStore = useCommonStore()
 
-
-onMounted(() => {
-  commonStore.increment()
-  console.log('Count from store:', commonStore.count)
-  console.log('Double Count from getter:', commonStore.doubleCount)
-})
 
 
 useMeta({
